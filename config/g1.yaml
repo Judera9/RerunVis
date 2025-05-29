@@ -1,0 +1,71 @@
+# ------ Dataset Config ------ #
+
+data_path: data/g1
+original_freq: 30
+target_freq: 50
+is_processed: False  # wether the data is processed as standard npy form
+clip:  # clip the data to this range
+    - 0.0
+    - 1.0
+
+# ------ URDF Config ------ #
+
+robot_name: g1
+assets_path: assets/g1
+urdf_path: g1_23dof_rev_1_0.urdf
+
+default_pose: [0, 0, 0.785, 0, 0, 0, 1, -0.15, 0, 0, 0.3, -0.15, 0, -0.15, 0, 0, 0.3, -0.15, 0, 0, 0, 1.57, 0, 1.57, 0, 0, -1.57, 0, 1.57, 0]
+root_link_name: pelvis
+
+joint_names:
+    - left_hip_pitch_joint  # 0
+    - left_hip_roll_joint  # 1
+    - left_hip_yaw_joint  # 2  !!!ZERO for amass!!!
+    - left_knee_joint  # 3
+    - left_ankle_pitch_joint  # 4
+    - left_ankle_roll_joint  # 5  !!!ZERO for amass!!!
+    - right_hip_pitch_joint  # 6
+    - right_hip_roll_joint  # 7
+    - right_hip_yaw_joint  # 8  !!!ZERO for amass!!!
+    - right_knee_joint  # 9
+    - right_ankle_pitch_joint  # 10
+    - right_ankle_roll_joint  # 11  !!!ZERO for amass!!!
+    - waist_yaw_joint  # 12
+    - left_shoulder_pitch_joint  # 13
+    - left_shoulder_roll_joint  # 14
+    - left_shoulder_yaw_joint  # 15
+    - left_elbow_joint  # 16
+    - left_wrist_roll_joint  # 17  !!!ZERO for amass!!!
+    - right_shoulder_pitch_joint  # 18
+    - right_shoulder_roll_joint  # 19
+    - right_shoulder_yaw_joint  # 20
+    - right_elbow_joint  # 21
+    - right_wrist_roll_joint  # 22  !!!ZERO for amass!!!
+
+track_body_names:
+    - pelvis  # 0
+    - left_hip_pitch_link  # 1
+    - left_knee_link  # 2
+    - left_ankle_roll_link  # 3
+    - right_hip_pitch_link  # 4
+    - right_knee_link  # 5
+    - right_ankle_roll_link  # 6
+    - left_shoulder_pitch_link  # 7
+    - left_elbow_link  # 8
+    - left_wrist_roll_rubber_hand  # 9
+    - right_shoulder_pitch_link  # 10
+    - right_elbow_link  # 11
+    - right_wrist_roll_rubber_hand  # 12
+
+# ------ Rerun Config ------ #
+
+visualize_rerun: True
+visualize_marker: True
+
+# ------ DataConvention Config ------ #
+
+save_npy_data: True
+
+
+
+
