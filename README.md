@@ -35,4 +35,18 @@ joint_pos = np.delete(
 2. Add your own robot config in `config/`
 3. Change the loaded robot config in `scripts/rerun_visualize.py`
 
+## Data Format
 
+* Original data format support `.csv` and `.npy` files.
+* Both files is the same format described as following, this can be aware from the function `load_motions_for_rerun` in `utils/data_utils.py`
+
+```csv
+...
+m_{t-1} -> ROOT_POS(3), ROOT_ORI(4), JOINT_POS(NUM_JOINTS)
+m_t -> ROOT_POS(3), ROOT_ORI(4), JOINT_POS(NUM_JOINTS)
+...
+```
+
+* The converted data format is `.npy` file.
+* The converted data include both joint space states and keypoints states, which are calculated using Pinocchio. You can try using different frame (*LOCAL, WORLD, LOCAL_WORLD_ALIGNED*) to calculate the keypoints states.
+* details can also be found in the function `load_motions_for_rerun` in `utils/data_utils.py`
